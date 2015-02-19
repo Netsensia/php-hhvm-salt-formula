@@ -34,3 +34,9 @@ configure_nginx_for_hhvm:
       - pkg: hhvm
     - watch_in:
       - module: nginx-restart
+
+/usr/share/nginx/html/hello.php:
+  file.managed:
+    - contents: |
+        <?php
+        echo "hello world\n";
